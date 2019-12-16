@@ -3,7 +3,6 @@ server:
 
 spring:
   datasource:
-#    url: jdbc:sqlite::resource:db/p2s_app.db
-    url: jdbc:sqlite:D:\dj\my\p2s\db\p2s_app.db
+    url: jdbc:sqlite:db/p2s_app.db
     username: root
     password: 123456
