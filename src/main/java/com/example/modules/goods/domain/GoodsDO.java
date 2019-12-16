@@ -1,0 +1,24 @@
+package com.example.modules.goods.domain;
+
+import com.example.common.base.domain.BaseDO;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+/**
+ * @author: dj
+ * @create: 2019-12-16 13:18
+ * @description: 物品
+ */
+@EqualsAndHashCode(callSuper = true)
+@Data
+@Entity
+@Table(name = "goods")
+public class GoodsDO extends BaseDO {
+
+    private String name;
+
+
+}

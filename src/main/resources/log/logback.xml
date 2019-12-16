@@ -7,7 +7,7 @@
     <!--定义日志存放的位置，默认存放在项目启动的相对路径的目录，在springboot中logging.path默认注入到LOG_PATH中-->
     <springProperty scope="context" name="LOG_PATH" source="logging.path" defaultValue="log"/>
     <!--  定义ip,文件名称,文件放置路径(需要引入LogBackConfig类)   -->
-    <define name="Content" class="com.tdr.config.LogBackConfig"/>
+    <define name="Content" class="com.example.config.LogBackConfig"/>
     <!-- 定义日志存放日期最大为30天 -->
     <property name="maxHistory" value="3"/>
 
