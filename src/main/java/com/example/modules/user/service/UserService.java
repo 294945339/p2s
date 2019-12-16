@@ -20,65 +20,49 @@ public class UserService {
     @Resource
     UserDAO userDAO;
 
-    public void createUser() {
+    public UserDO createUser() {
         UserDO userDO = new UserDO();
         String name = ChineseNameUtil.getName();
-
+        userDO.setName(name);
         RaceEnum raceEnum = RaceEnum.getEnum(RandomUtil.randomInt(1, 4));
         if (null == raceEnum) {
             raceEnum = RaceEnum.human;
         }
 
-        Integer race = raceEnum.getId();
+        int race = raceEnum.getId();
+        userDO.setRace(race);
 
-        Integer sex;
+        int sex = 1;
+        userDO.setSex(sex);
 
-        /**
-         * 生命值
-         */
-        Integer hp;
+        int maxHp = RandomUtil.randomInt(raceEnum.getMinHp(), raceEnum.getMaxHp());
+        userDO.setMaxHp(maxHp);
+        userDO.setHp(maxHp);
 
-        /**
-         * 年龄
-         */
-        Integer age;
+        int age = RandomUtil.randomInt(1, 19);
+        userDO.setAge(age);
 
-        /**
-         * 剩余生命
-         */
-        Integer life;
+        int life = RandomUtil.randomInt(raceEnum.getMinLife(), raceEnum.getMaxLife());
+        userDO.setLife(life);
 
-        /**
-         * 智力
-         */
-        Integer spirit;
+        int spirit = RandomUtil.randomInt(1, 100);
+        userDO.setSpirit(spirit);
 
-        /**
-         * 体制
-         */
-        Integer body;
+        int body = RandomUtil.randomInt(1, 100);
+        userDO.setBody(body);
 
-        /**
-         * 运气
-         */
-        Integer luck;
+        int luck = RandomUtil.randomInt(1, 60);
+        userDO.setLuck(luck);
 
-        /**
-         * 位置
-         */
-        Integer position;
+        int position = RandomUtil.randomInt(1, 10);
+        userDO.setPosition(position);
 
-        /**
-         * 目标
-         */
         String target;
 
-        /**
-         * 金币
-         */
-        Integer money;
+        int money = RandomUtil.randomInt(100, 1000);
+        userDO.setMoney(money);
 
-        RandomUtil.randomInt(50, 100);
+        return userDAO.save(userDO);
     }
 
 }

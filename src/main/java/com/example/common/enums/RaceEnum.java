@@ -27,16 +27,16 @@ public enum RaceEnum {
 
     private int id;
     private String name;
-    private int hpMin;
-    private int hpMax;
+    private int minHp;
+    private int maxHp;
     private int minLife;
     private int maxLife;
 
-    RaceEnum(int id, String name, int hpMin, int hpMax, int minLife, int maxLife) {
+    RaceEnum(int id, String name, int minHp, int maxHp, int minLife, int maxLife) {
         this.id = id;
         this.name = name;
-        this.hpMin = hpMin;
-        this.hpMax = hpMax;
+        this.minHp = minHp;
+        this.maxHp = maxHp;
         this.minLife = minLife;
         this.maxLife = maxLife;
     }
@@ -59,12 +59,12 @@ public enum RaceEnum {
         return name;
     }
 
-    public int getHpMin() {
-        return hpMin;
+    public int getMinHp() {
+        return minHp;
     }
 
-    public int getHpMax() {
-        return hpMax;
+    public int getMaxHp() {
+        return maxHp;
     }
 
     public int getMinLife() {

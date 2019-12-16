@@ -40,6 +40,11 @@ public class UserDO extends BaseDO {
     private Integer hp;
 
     /**
+     * 最大血量
+     */
+    private Integer maxHp;
+
+    /**
      * 年龄
      */
     private Integer age;
