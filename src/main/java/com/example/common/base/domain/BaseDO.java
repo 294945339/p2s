@@ -22,9 +22,19 @@ public class BaseDO implements Serializable {
     private Long id;
 
     /**
-     * 创建时间
+     * 系统时间
      */
     @Column(nullable = false)
     private Long sysTime;
+
+    /**
+     * 创建人
+     */
+    private Long createId;
+
+    /**
+     * 创建人名字
+     */
+    private String createName;
 
 }
