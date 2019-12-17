@@ -85,6 +85,11 @@ public class UserDO extends BaseDO {
     private Integer money;
 
     /**
+     * 伤害
+     */
+    private Integer hurt;
+
+    /**
      * 背包物品
      */
     @OneToMany
