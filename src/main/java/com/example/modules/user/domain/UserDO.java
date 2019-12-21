@@ -2,6 +2,7 @@ package com.example.modules.user.domain;
 
 import com.example.common.base.domain.BaseDO;
 //import com.example.modules.goods.domain.GoodsDO;
+import com.example.modules.goods.domain.GoodsDO;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -112,9 +113,9 @@ public class UserDO extends BaseDO {
     /**
      * 背包物品
      */
-//    @OneToMany
-//    @JoinTable(name = "pack", joinColumns = {@JoinColumn(name = "user_id")}
-//            , inverseJoinColumns = {@JoinColumn(name = "goods_id")})
-//    private List<GoodsDO> goodsList;
+    @OneToMany
+    @JoinTable(name = "pack", joinColumns = {@JoinColumn(name = "user_id")}
+            , inverseJoinColumns = {@JoinColumn(name = "goods_id")})
+    private List<GoodsDO> goodsList;
 
 }

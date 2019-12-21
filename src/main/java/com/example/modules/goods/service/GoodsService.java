@@ -1,8 +1,13 @@
 package com.example.modules.goods.service;
 
 //import com.example.modules.goods.domain.GoodsDO;
+
+import com.example.modules.goods.dao.GoodsDAO;
+import com.example.modules.user.dao.UserDAO;
 import com.example.modules.user.domain.UserDO;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
 
 /**
  * @author: dj
@@ -11,6 +16,12 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class GoodsService {
+
+    @Resource
+    private GoodsDAO goodsDAO;
+
+    @Resource
+    private UserDAO userDAO;
 
     public void createGoods(UserDO userDO) {
         Long userId = 0L;
@@ -23,10 +34,9 @@ public class GoodsService {
 
     }
 
-    public void use() {
+    public void use(Long userId, Long goodsId) {
 
     }
-
 
 
 }

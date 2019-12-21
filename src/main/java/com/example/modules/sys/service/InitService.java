@@ -1,5 +1,6 @@
 package com.example.modules.sys.service;
 
+import com.example.modules.goods.service.AreaService;
 import com.example.modules.user.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.ApplicationArguments;
@@ -18,10 +19,15 @@ import javax.annotation.Resource;
 public class InitService implements ApplicationRunner {
 
     @Resource
+    private AreaService areaService;
+
+    @Resource
     private UserService userService;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
+
+        areaService.initArea();
 
         userService.createUser();
 
