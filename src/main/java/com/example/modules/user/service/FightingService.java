@@ -17,9 +17,6 @@ import javax.annotation.Resource;
 @Service
 public class FightingService {
 
-    @Resource
-    private UserDO userDO;
-
     public void pk(@NotNull UserDO me, @NotNull UserDO you) {
 
 

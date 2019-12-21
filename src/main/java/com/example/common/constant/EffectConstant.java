@@ -1,4 +1,4 @@
-package com.example.common.Dictionaries;
+package com.example.common.constant;
 
 import org.springframework.stereotype.Component;
 

@@ -6,9 +6,8 @@ import lombok.EqualsAndHashCode;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import java.util.List;
+import javax.persistence.UniqueConstraint;
 
 /**
  * @author: dj
@@ -18,7 +17,9 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
-@Table(name = "pack")
+@Table(name = "pack", uniqueConstraints = {
+        @UniqueConstraint(name = "pack_user_id_goods_id", columnNames = {"user_id", "goods_id"})
+})
 public class PackDO extends BaseDO {
 
     @Column(name = "user_id")

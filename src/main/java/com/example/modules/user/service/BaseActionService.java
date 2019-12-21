@@ -1,7 +1,7 @@
 package com.example.modules.user.service;
 
 import com.example.modules.goods.dao.PackDAO;
-import com.example.modules.goods.domain.GoodsDO;
+//import com.example.modules.goods.domain.GoodsDO;
 import com.example.modules.user.dao.UserDAO;
 import com.example.modules.user.domain.UserDO;
 import org.jetbrains.annotations.NotNull;
@@ -21,8 +21,8 @@ public class BaseActionService {
     @Resource
     private UserDAO userDAO;
 
-    @Resource
-    private GoodsDO goodsDO;
+//    @Resource
+//    private GoodsDO goodsDO;
 
     @Resource
     private PackDAO packDAO;
@@ -43,9 +43,9 @@ public class BaseActionService {
 
     }
 
-    public void addHp(UserDO userDo, GoodsDO goodsDO) {
-
-    }
+//    public void addHp(UserDO userDo, GoodsDO goodsDO) {
+//
+//    }
 
     public void eat(UserDO userDo) {
 
@@ -63,14 +63,14 @@ public class BaseActionService {
 
     }
 
-    public void snatch(UserDO me, UserDO you, GoodsDO goodsDO) {
+//    public void snatch(UserDO me, UserDO you, GoodsDO goodsDO) {
+//
+//    }
 
-    }
-
-    @Transactional(rollbackFor = Exception.class)
-    public void give(UserDO me, UserDO you, GoodsDO goodsDO) {
-
-    }
+//    @Transactional(rollbackFor = Exception.class)
+//    public void give(UserDO me, UserDO you, GoodsDO goodsDO) {
+//
+//    }
 
     @Transactional(rollbackFor = Exception.class)
     public void pk(@NotNull UserDO me, @NotNull UserDO you) {
@@ -85,7 +85,7 @@ public class BaseActionService {
 
 }
 
-    
+
 
 
 

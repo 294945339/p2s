@@ -1,4 +1,4 @@
-package com.example.modules.goods.domain;
+package com.example.modules.goods.dto;
 
 import lombok.Data;
 
@@ -10,7 +10,7 @@ import java.io.Serializable;
  * @description:
  */
 @Data
-public class EffectDO implements Serializable {
+public class EffectDTO implements Serializable {
 
     private String name;
 

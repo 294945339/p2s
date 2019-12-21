@@ -30,11 +30,11 @@ public class BaseDO implements Serializable {
     /**
      * 创建人
      */
-    private Long createId;
+    private Long createId = 0L;
 
     /**
      * 创建人名字
      */
-    private String createName;
+    private String createName = "初代";
 
 }

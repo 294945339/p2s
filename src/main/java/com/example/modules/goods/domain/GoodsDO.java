@@ -30,4 +30,8 @@ public class GoodsDO extends BaseDO {
     private String effectArray;
 
     private Integer status;
+
+    private Long userId;
+
+    private String userName;
 }
