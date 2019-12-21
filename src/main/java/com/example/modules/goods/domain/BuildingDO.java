@@ -4,8 +4,8 @@ import com.example.common.base.domain.BaseDO;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 /**
  * @author: dj
@@ -24,5 +24,14 @@ public class BuildingDO extends BaseDO {
     private Integer type;
 
 //    private Integer taskId;
+
+    /**
+     * 拥有物品
+     */
+    @OneToMany
+    @JoinTable(name = "pack", joinColumns = {@JoinColumn(name = "building_id")}
+            , inverseJoinColumns = {@JoinColumn(name = "goods_id")})
+    private List<GoodsDO> goodsList;
+
 
 }

@@ -25,6 +25,9 @@ public class PackDO extends BaseDO {
     @Column(name = "user_id")
     private Long userId;
 
+    @Column(name = "building_id")
+    private Long buildingId;
+
     @Column(name = "goods_id")
     private Long goodsId;
 

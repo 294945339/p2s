@@ -111,6 +111,17 @@ public class UserDO extends BaseDO {
     private Integer status;
 
     /**
+     * 所属地方
+     */
+    private Integer buildingId;
+
+    /**
+     * 地方贡献
+     */
+    private Integer buildingContribution;
+
+
+    /**
      * 背包物品
      */
     @OneToMany
