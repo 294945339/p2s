@@ -60,7 +60,7 @@ public class UserDO extends BaseDO {
     private Integer spirit;
 
     /**
-     * 体制
+     * 体力
      */
     private Integer body;
 
@@ -88,6 +88,26 @@ public class UserDO extends BaseDO {
      * 伤害
      */
     private Integer hurt;
+
+    /**
+     * 好坏
+     */
+    private Integer goodOrBad;
+
+    /**
+     * 速度
+     */
+    private Integer speed;
+
+    /**
+     * 等级
+     */
+    private Integer level;
+
+    /**
+     * 状态 2,1,0
+     */
+    private Integer status;
 
     /**
      * 背包物品

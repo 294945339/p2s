@@ -62,8 +62,6 @@ public class UserService {
         int position = RandomUtil.randomInt(1, 10);
         userDO.setPosition(position);
 
-        String target;
-
         int money = RandomUtil.randomInt(100, 1000);
         userDO.setMoney(money);
 
@@ -75,5 +73,6 @@ public class UserService {
 
         return userDO;
     }
+
 
 }

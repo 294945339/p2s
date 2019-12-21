@@ -20,5 +20,14 @@ public class GoodsDO extends BaseDO {
 
     private String name;
 
+    private Integer type;
 
+    /**
+     * 使用次数
+     */
+    private String useNum;
+
+    private String effectArray;
+
+    private Integer status;
 }
