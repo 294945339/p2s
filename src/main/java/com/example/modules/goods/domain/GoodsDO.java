@@ -19,7 +19,6 @@ import javax.persistence.Table;
 @Table(name = "goods")
 public class GoodsDO extends BaseDO {
 
-    @Column(name = "name")
     private String name;
 
     /**
@@ -28,22 +27,23 @@ public class GoodsDO extends BaseDO {
      * "drug", "药品"
      * "trump", "法宝"
      */
-    @Column(name = "type")
     private Integer type;
 
     /**
      * 使用次数
      */
-    @Column(name = "use_num")
     private String useNum;
 
-    @Column(name = "effect")
     private String effect;
 
-    @Column(name = "status")
     private Integer status;
 
+    /**
+     * 归属id
+     */
     @Column(name = "user_id")
     private String userId;
 
+    public GoodsDO() {
+    }
 }

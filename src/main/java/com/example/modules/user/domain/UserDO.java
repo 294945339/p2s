@@ -1,13 +1,13 @@
 package com.example.modules.user.domain;
 
+import cn.hutool.core.util.RandomUtil;
 import com.example.common.base.domain.BaseDO;
-//import com.example.modules.goods.domain.GoodsDO;
-import com.example.modules.goods.domain.GoodsDO;
+import com.example.common.enums.RaceEnum;
+import com.example.common.utils.ChineseNameUtil;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
-import java.util.List;
 
 /**
  * @author: dj
@@ -73,7 +73,7 @@ public class UserDO extends BaseDO {
     /**
      * 位置
      */
-    private Integer position;
+    private String areaId;
 
     /**
      * 目标
@@ -113,20 +113,44 @@ public class UserDO extends BaseDO {
     /**
      * 所属地方
      */
-    private Integer buildingId;
+    private String buildingId;
 
     /**
      * 地方贡献
      */
     private Integer buildingContribution;
 
-
     /**
-     * 背包物品
+     * 区域贡献
      */
-    @OneToMany
-    @JoinTable(name = "pack", joinColumns = {@JoinColumn(name = "user_id")}
-            , inverseJoinColumns = {@JoinColumn(name = "goods_id")})
-    private List<GoodsDO> goodsList;
+    private Integer areaContribution;
+
+    public UserDO() {
+        this.name = ChineseNameUtil.getName();
+        RaceEnum raceEnum = RaceEnum.getEnum(RandomUtil.randomInt(1, 4));
+        if (null == raceEnum) {
+            raceEnum = RaceEnum.human;
+        }
+        this.race = raceEnum.getId();
+        this.sex = RandomUtil.randomInt(1, 2);
+        int maxHp = RandomUtil.randomInt(raceEnum.getMinHp(), raceEnum.getMaxHp());
+        this.maxHp = maxHp;
+        this.hp = maxHp;
+        this.age = RandomUtil.randomInt(1, 19);
+        this.life = RandomUtil.randomInt(raceEnum.getMinLife(), raceEnum.getMaxLife());
+        this.spirit = RandomUtil.randomInt(1, 100);
+        this.body = RandomUtil.randomInt(1, 100);
+        this.luck = RandomUtil.randomInt(1, 60);
+        this.areaId = RandomUtil.randomInt(1, 10) + "";
+        this.money = RandomUtil.randomInt(100, 1000);
+
+        this.goodOrBad = 0;
+        this.speed = this.body / 2;
+        this.level = 0;
+        this.status = 0;
+
+        this.buildingContribution = 0;
+        this.areaContribution = 0;
+    }
 
 }

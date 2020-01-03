@@ -1,8 +1,8 @@
 package com.example.modules.user.service;
 
 import com.example.modules.goods.dao.GoodsDAO;
-import com.example.modules.goods.dao.PackDAO;
 import com.example.modules.goods.domain.GoodsDO;
+import com.example.modules.user.dao.UserDAO;
 import com.example.modules.user.domain.UserDO;
 import org.springframework.stereotype.Service;
 
@@ -21,10 +21,7 @@ public class UseGoodsService {
     private GoodsDAO goodsDAO;
 
     @Resource
-    private UserDO userDO;
-
-    @Resource
-    private PackDAO packDAO;
+    private UserDAO userDAO;
 
     public void useDrugs(UserDO userDO) {
 

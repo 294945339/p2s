@@ -1,6 +1,6 @@
 package com.example.modules.goods.dao;
 
-import com.example.modules.goods.domain.GoodsDO;
+import com.example.modules.goods.domain.BuildingDO;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -10,6 +10,6 @@ import org.springframework.stereotype.Repository;
  * @description:
  */
 @Repository
-public interface GoodsDAO extends JpaRepository<GoodsDO, String> {
+public interface BuildingDAO extends JpaRepository<BuildingDO, String> {
 
 }

@@ -2,6 +2,7 @@ package com.example.modules.goods.service;
 
 //import com.example.modules.goods.domain.GoodsDO;
 
+import cn.hutool.core.util.IdUtil;
 import com.example.modules.goods.dao.GoodsDAO;
 import com.example.modules.user.dao.UserDAO;
 import com.example.modules.user.domain.UserDO;
@@ -24,7 +25,7 @@ public class GoodsService {
     private UserDAO userDAO;
 
     public void createGoods(UserDO userDO) {
-        Long userId = 0L;
+        String userId = IdUtil.fastUUID();
         String userName = "";
         if (null != userDO) {
             userId = userDO.getId();

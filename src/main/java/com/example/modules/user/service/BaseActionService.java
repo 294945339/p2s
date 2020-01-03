@@ -1,7 +1,7 @@
 package com.example.modules.user.service;
 
-import com.example.modules.goods.dao.PackDAO;
 //import com.example.modules.goods.domain.GoodsDO;
+import com.example.modules.goods.dao.GoodsDAO;
 import com.example.modules.user.dao.UserDAO;
 import com.example.modules.user.domain.UserDO;
 import org.jetbrains.annotations.NotNull;
@@ -21,11 +21,9 @@ public class BaseActionService {
     @Resource
     private UserDAO userDAO;
 
-//    @Resource
-//    private GoodsDO goodsDO;
-
     @Resource
-    private PackDAO packDAO;
+    private GoodsDAO goodsDAO;
+
 
     public void userAction(UserDO userDo) {
 
