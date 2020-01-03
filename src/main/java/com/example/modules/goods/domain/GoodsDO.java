@@ -4,6 +4,7 @@ import com.example.common.base.domain.BaseDO;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -18,20 +19,31 @@ import javax.persistence.Table;
 @Table(name = "goods")
 public class GoodsDO extends BaseDO {
 
+    @Column(name = "name")
     private String name;
 
+    /**
+     * "arms", "武器"
+     * "armor", "护甲"
+     * "drug", "药品"
+     * "trump", "法宝"
+     */
+    @Column(name = "type")
     private Integer type;
 
     /**
      * 使用次数
      */
+    @Column(name = "use_num")
     private String useNum;
 
-    private String effectArray;
+    @Column(name = "effect")
+    private String effect;
 
+    @Column(name = "status")
     private Integer status;
 
-    private Long userId;
+    @Column(name = "user_id")
+    private String userId;
 
-    private String userName;
 }

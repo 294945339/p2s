@@ -11,4 +11,6 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface GoodsDAO extends JpaRepository<GoodsDO, Long> {
+
+
 }

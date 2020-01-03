@@ -23,4 +23,5 @@ public interface PackDAO extends JpaRepository<PackDO, Long> {
      */
     List<PackDO> findByUserIdAndGoodsId(Long userId, Long goodsId);
 
+
 }
