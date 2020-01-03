@@ -1,6 +1,7 @@
 package com.example.modules.user.service;
 
 //import com.example.modules.goods.domain.GoodsDO;
+
 import com.example.modules.goods.dao.GoodsDAO;
 import com.example.modules.user.dao.UserDAO;
 import com.example.modules.user.domain.UserDO;
@@ -23,6 +24,9 @@ public class BaseActionService {
 
     @Resource
     private GoodsDAO goodsDAO;
+
+    @Resource
+    private FightingService fightingService;
 
 
     public void userAction(UserDO userDo) {
@@ -72,13 +76,12 @@ public class BaseActionService {
 
     @Transactional(rollbackFor = Exception.class)
     public void pk(@NotNull UserDO me, @NotNull UserDO you) {
-        Integer meHp = me.getHp();
-        Integer youHp = you.getHp();
+        fightingService.pk(me, you, false);
     }
 
     @Transactional(rollbackFor = Exception.class)
     public void kill(UserDO me, UserDO you) {
-
+        fightingService.pk(me, you, true);
     }
 
 }

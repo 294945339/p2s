@@ -106,7 +106,7 @@ public class UserDO extends BaseDO {
     private Integer level;
 
     /**
-     * 状态 2(重伤),1(正常),0(死亡)
+     * 状态 3(重伤),2(消失),1(死亡),0(正常)
      */
     private Integer status;
 
