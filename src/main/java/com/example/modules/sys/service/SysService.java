@@ -1,7 +1,11 @@
 package com.example.modules.sys.service;
 
+import com.example.modules.sys.dao.ConfigDAO;
+import com.example.modules.sys.domain.ConfigDO;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
@@ -12,17 +16,24 @@ import java.util.concurrent.atomic.AtomicLong;
 @Service
 public class SysService {
 
-    public AtomicLong sysTime;
+    @Resource
+    private ConfigDAO sysConfigDAO;
 
-    public SysService() {
-        this.sysTime = new AtomicLong(0);
-    }
+    public static AtomicLong SYS_TIME = new AtomicLong(0);
 
-    public long addSysTime() {
-        return this.sysTime.addAndGet(1);
-    }
+    public void initSysTime() {
+        String name = "sysTime";
+        List<ConfigDO> list = sysConfigDAO.findByName(name);
+        if (0 == list.size()) {
+            ConfigDO sysConfigDO = new ConfigDO();
+            sysConfigDO.setName(name);
+            sysConfigDO.setValue("0");
+            sysConfigDAO.save(sysConfigDO);
+        } else {
+            ConfigDO sysConfigDO = list.get(0);
+            String value = sysConfigDO.getValue();
+            SYS_TIME = new AtomicLong(Long.parseLong(value));
+        }
 
-    public AtomicLong getSysTime() {
-        return sysTime;
     }
 }

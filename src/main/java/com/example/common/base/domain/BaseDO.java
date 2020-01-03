@@ -1,6 +1,7 @@
 package com.example.common.base.domain;
 
 import cn.hutool.core.util.IdUtil;
+import com.example.modules.sys.service.SysService;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -30,7 +31,6 @@ public class BaseDO implements Serializable {
     /**
      * 创建人
      */
-    @Column(nullable = false)
     private String createId;
 
     /**
@@ -39,7 +39,7 @@ public class BaseDO implements Serializable {
     private String createName;
 
     public BaseDO() {
-        this.sysTime = 0L;
+        this.sysTime = SysService.SYS_TIME.get();
         this.createName = "初代";
         this.id = IdUtil.fastUUID();
     }

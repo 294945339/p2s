@@ -19,6 +19,9 @@ import javax.annotation.Resource;
 public class InitService implements ApplicationRunner {
 
     @Resource
+    private SysService sysService;
+
+    @Resource
     private AreaService areaService;
 
     @Resource
@@ -26,6 +29,8 @@ public class InitService implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
+
+        sysService.initSysTime();
 
         areaService.initArea();
 
