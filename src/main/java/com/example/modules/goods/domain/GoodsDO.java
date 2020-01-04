@@ -48,13 +48,14 @@ public class GoodsDO extends BaseDO {
      */
     private Integer value;
 
-
+    /**
+     * 0正常,1正使用,2销毁
+     */
     private Integer status;
 
     /**
      * 归属id
      */
-    @Column(name = "user_id")
     private String userId;
 
     public GoodsDO() {

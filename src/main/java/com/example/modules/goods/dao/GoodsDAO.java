@@ -19,16 +19,18 @@ public interface GoodsDAO extends JpaRepository<GoodsDO, String> {
      *
      * @param userId 拥有者
      * @param type   type
+     * @param status 状态
      * @return list
      */
-    List<GoodsDO> findByUserIdAndType(String userId, String type);
+    List<GoodsDO> findByUserIdAndTypeAndStatus(String userId, String type, int status);
 
     /**
      * 根据userId查询
      *
      * @param userId 拥有者
+     * @param status 状态
      * @return list
      */
-    List<GoodsDO> findByUserId(String userId);
+    List<GoodsDO> findByUserIdAndStatus(String userId, int status);
 
 }
