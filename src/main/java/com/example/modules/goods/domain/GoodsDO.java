@@ -27,14 +27,27 @@ public class GoodsDO extends BaseDO {
      * "drug", "药品"
      * "trump", "法宝"
      */
-    private Integer type;
+    private String type;
 
     /**
      * 使用次数
      */
     private String useNum;
 
+    /**
+     * hp
+     * body
+     * xp
+     * defense
+     * hurt
+     */
     private String effect;
+
+    /**
+     * 效果内容
+     */
+    private Integer value;
+
 
     private Integer status;
 

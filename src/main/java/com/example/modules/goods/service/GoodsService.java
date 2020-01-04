@@ -3,7 +3,9 @@ package com.example.modules.goods.service;
 //import com.example.modules.goods.domain.GoodsDO;
 
 import cn.hutool.core.util.IdUtil;
+import com.example.common.constant.GoodsConstant;
 import com.example.modules.goods.dao.GoodsDAO;
+import com.example.modules.goods.domain.GoodsDO;
 import com.example.modules.user.dao.UserDAO;
 import com.example.modules.user.domain.UserDO;
 import org.springframework.stereotype.Service;
@@ -35,8 +37,26 @@ public class GoodsService {
 
     }
 
-    public void use(Long userId, Long goodsId) {
+    public void useGood(UserDO userDO, GoodsDO goodsDO) {
 
+
+
+        /**
+         * "arms", "wuqi"
+         * "armor", "hujia"
+         * "drug", "yaoping"
+         * "trump", "fabao"
+         */
+            //wuqi
+        if(GoodsConstant.GOODS_TYPE_ARMS.equalsIgnoreCase(goodsDO.getType())){
+
+        }else if(GoodsConstant.GOODS_ARMOR.equalsIgnoreCase(goodsDO.getType())){
+
+        }else if(GoodsConstant.GOODS_DRUG.equalsIgnoreCase(goodsDO.getType())){
+
+        }else if(GoodsConstant.GOODS_TRUMP.equalsIgnoreCase(goodsDO.getType())){
+
+        }
     }
 
 

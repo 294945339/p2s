@@ -91,6 +91,11 @@ public class UserDO extends BaseDO {
     private Integer hurt;
 
     /**
+     * 防御
+     */
+    private Integer defense;
+
+    /**
      * 好坏
      */
     private Integer goodOrBad;
@@ -99,6 +104,11 @@ public class UserDO extends BaseDO {
      * 速度
      */
     private Integer speed;
+
+    /**
+     * 经验
+     */
+    private Integer xp;
 
     /**
      * 等级
@@ -125,6 +135,31 @@ public class UserDO extends BaseDO {
      */
     private Integer areaContribution;
 
+
+    /**
+     * "arms", "武器"
+     * "armor", "护甲"
+     * "drug", "药品"
+     * "trump", "法宝"
+     */
+    private String armsId;
+
+    private String armsName;
+
+    private String armorId;
+
+    private String armorName;
+
+    private String trumpId;
+
+    private String trumpName;
+
+    /**
+     * 0me,1you
+     */
+    private Integer type;
+
+
     public UserDO() {
         this.name = ChineseNameUtil.getName();
         RaceEnum raceEnum = RaceEnum.getEnum(RandomUtil.randomInt(1, 4));
@@ -148,6 +183,11 @@ public class UserDO extends BaseDO {
         this.speed = this.body / 2;
         this.level = 0;
         this.status = 0;
+
+        this.xp = 0;
+        this.hurt = this.body / 3;
+        this.defense = this.body / 4;
+        this.type = 1;
 
         this.buildingContribution = 0;
         this.areaContribution = 0;
